@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="navbar navbar-dark bg-secondary p-2">
+    <h1><%= @list.name %></h1>
+    <%= link_to "List page", lists_path, class:"btn btn-primary" %>
+  </div>
+  <div class="container">
+    <h3>Bookmarks</h3>
+    <%= link_to "add a bookmark", new_list_bookmark_path(params[:id]), class:"btn btn-success" %>
+  </div>
+<div class="container d-flex p-2">
+  <% @list.bookmarks.each do |bookmark| %>
+    <div class="card p-2 m-2" style="width: 18rem;">
+      <img src=<%= bookmark.movie.poster_url %> class="card-img-top" alt="<%= bookmark.movie.title %> movie poster">
+      <div class="card-body">
+        <h5 class="card-title"><strong><%= bookmark.movie.title %></strong></h5>
+        <p><%= bookmark.movie.rating %>/10</p>
+        <p class="card-text">Overview: <%= bookmark.movie.overview %></p>
+        <%= link_to "remove from list", bookmark_path(bookmark), class:"btn btn-warning", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to remove #{bookmark.movie.title}?"} %>
+      </div>
+    </div>
+  <% end %>
+</div>
+</div>
