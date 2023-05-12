@@ -5,13 +5,15 @@
   </div>
 
   <div class="container d-flex justify-content-evenly">
-  <% @lists.each do |list| %>
-    <div class="card p-2 m-4" style="width: 18rem; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.image.attached? ? cl_image_path(list.image.key) : 'https://static.vecteezy.com/system/resources/previews/000/677/949/original/liquid-gradient-color-background-fluid-gradient.jpg' %>)">
-      <div class="card-body p-2 m-2">
-        <h2><%= link_to list.name, list_path(list), class:"text-decoration-none" %>
-        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"><%= list.bookmarks.count %></span></h2>
-      </div>
+    <div class="cards">
+      <% @lists.each do |list| %>
+        <div class="card p-2 m-4" style="width: 18rem; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.image.attached? ? cl_image_path(list.image.key) : 'https://static.vecteezy.com/system/resources/previews/000/677/949/original/liquid-gradient-color-background-fluid-gradient.jpg' %>)">
+          <div class="card-body p-2 m-2">
+            <h2><%= link_to list.name, list_path(list), class:"text-decoration-none" %>
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"><%= list.bookmarks.count %></span></h2>
+          </div>
+        </div>
+      <% end %>
     </div>
-  <% end %>
   </div>
 </div>
