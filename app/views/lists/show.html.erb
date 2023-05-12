@@ -3,7 +3,8 @@
     <h1><%= @list.name %></h1>
     <div class="container d-flex p-2 m-2 align-items-end">
       <%= link_to "add a bookmark", new_list_bookmark_path(params[:id]), class:"btn btn-success" %>
-      <%= link_to "Lists", lists_path, class:"btn btn-primary" %>
+      <%= link_to "All my lists", lists_path, class:"btn btn-primary" %>
+      <%= link_to "Remove list", list_path(@list), data: { turbo_method: :delete, turbo_confirm:"Are you sure you want to remove this list?"} ,class:"btn btn-warning" %>
     </div>
   </div>
   <div class="container d-flex p-2 justify-content-evenly">
