@@ -1,9 +1,9 @@
 <div class="container">
-  <div class="navbar p-2 m-2 " style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= @list.image.attached? ? cl_image_path(@list.image.key) : '../assets/images/blue_green_gradient.jpg' %>)">
+  <div class="navbar p-2 mt-2 " style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= @list.image.attached? ? cl_image_path(@list.image.key) : '../assets/images/blue_green_gradient.jpg' %>)">
     <h1><%= @list.name %></h1>
     <div class="container d-flex p-2 m-2 align-items-end">
       <%= link_to "add a bookmark", new_list_bookmark_path(params[:id]), class:"btn btn-success" %>
-      <%= link_to "List page", lists_path, class:"btn btn-primary" %>
+      <%= link_to "Lists", lists_path, class:"btn btn-primary" %>
     </div>
   </div>
 
