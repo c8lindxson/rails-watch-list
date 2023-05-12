@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="navbar p-2 mt-2 " style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= @list.image.attached? ? cl_image_path(@list.image.key) : '../assets/images/blue_green_gradient.jpg' %>)">
+  <div class="navbar p-2 mt-2 " style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= @list.image.attached? ? cl_image_path(@list.image.key) : 'https://static.vecteezy.com/system/resources/previews/000/677/949/original/liquid-gradient-color-background-fluid-gradient.jpg' %>)">
     <h1><%= @list.name %></h1>
     <div class="container d-flex p-2 m-2 align-items-end">
       <%= link_to "add a bookmark", new_list_bookmark_path(params[:id]), class:"btn btn-success" %>
