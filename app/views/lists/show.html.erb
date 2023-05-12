@@ -1,10 +1,10 @@
 <div class="container">
   <div class="navbar p-2 mt-2 " style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= @list.image.attached? ? cl_image_path(@list.image.key) : 'https://static.vecteezy.com/system/resources/previews/000/677/949/original/liquid-gradient-color-background-fluid-gradient.jpg' %>)">
     <h1><%= @list.name %></h1>
-    <div class="container d-flex p-2 m-2 align-items-end">
-      <%= link_to "add a bookmark", new_list_bookmark_path(params[:id]), class:"btn btn-success" %>
-      <%= link_to "All my lists", lists_path, class:"btn btn-primary" %>
-      <%= link_to "Remove list", list_path(@list), data: { turbo_method: :delete, turbo_confirm:"Are you sure you want to remove this list?"} ,class:"btn btn-warning" %>
+    <div class="container d-flex p-2 m-2">
+      <%= link_to "add a bookmark", new_list_bookmark_path(params[:id]), class:"btn btn-success mt-1" %>
+      <%= link_to "All my lists", lists_path, class:"btn btn-primary mt-1" %>
+      <%= link_to "Remove list", list_path(@list), data: { turbo_method: :delete, turbo_confirm:"Are you sure you want to remove this list?"} ,class:"btn btn-warning mt-1" %>
     </div>
   </div>
   <div class="container d-flex p-2 justify-content-evenly">
