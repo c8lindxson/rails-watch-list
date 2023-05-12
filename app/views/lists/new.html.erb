@@ -1,12 +1,12 @@
 <div class="container">
-  <div class="navbar navbar-dark bg-secondary p-2 m-2" style="height: 150px;">
+  <div class="navbar navbar-dark bg-secondary p-2 m-2 align-items-end" style="height: 150px;">
     <h1>New list</h1>
     <%= link_to "List page", lists_path, class:"btn btn-primary" %>
   </div>
     <%= simple_form_for @list do |f| %>
         <%= f.input :name %>
-        <%= f.input :photo, as: :file %>
-        <%= f.submit %>
+        <%= f.input :image, as: :file %>
+        <%= f.submit class:"btn btn-secondary"%>
     <% end %>
 
 </div>
